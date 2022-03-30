@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Card, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '../App.css';
 
 export default function DrinkCard(props) {
 	const alphabet = [
@@ -46,10 +48,13 @@ export default function DrinkCard(props) {
 		[ props.random ]
 	);
 	return (
-		<Card className="m-4" style={{ width: '18rem' }} onClick={() => props.onDrinkClick(drink)}>
+		<Card className="m-4" style={{ width: '18rem' }}>
 			<Card.Img variant="top" src={drink.strDrinkThumb} />
+			<FontAwesomeIcon icon="fa-heart" className="color-red-blue" />
 			<Card.Body>
-				<Card.Title>{drink.strDrink}</Card.Title>
+				<Card.Title onClick={() => props.onDrinkClick(drink)}>
+					<a href="#">{drink.strDrink}</a>
+				</Card.Title>
 				{drink.strInstructions && <Card.Text>{drink.strInstructions.substring(0, 75) + '...'}</Card.Text>}
 			</Card.Body>
 		</Card>

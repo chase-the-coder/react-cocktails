@@ -3,7 +3,7 @@ import { Row, Col, ListGroup, Card } from 'react-bootstrap';
 function DrinkColumns(props) {
 	return (
 		<Row className="border border-5">
-			<Col className="p-4 d-flex align-items-center justify-content-center">
+			<Col className="p-4 d-flex flex-column align-items-center justify-content-center">
 				{props.drink && (
 					<img
 						className="rounded fluid"
@@ -13,9 +13,10 @@ function DrinkColumns(props) {
 						height="300"
 					/>
 				)}
+				<h2 className='p-3'>{props.drink.strDrink}</h2>
 			</Col>
 			<Col className="p-4">
-                <Card.Title>{props.drink.strDrink}</Card.Title>
+                
                     <Card.Text>
                     {props.drink.strInstructions}
                     </Card.Text>
@@ -25,8 +26,8 @@ function DrinkColumns(props) {
                            
 							<div className="d-flex justify-content-center p-0 m-0">
 								<ListGroup.Item className="w-50 d-flex justify-content-around" key={props.drink.idDrink} as="li">
-									<span className=''>{props.measure[index]}</span>
-									<span className='text-start'>{ingredient}</span>
+									<span className='flex-grow-1 m-0'>{props.measure[index]}</span>
+									<span className='text-start w-50'>{ingredient}</span>
 								</ListGroup.Item>
 							</div>
                             </>

@@ -12,9 +12,5 @@ export default function Input(props) {
 	  value={props.userInput}
     />
 	 </InputGroup>
-
- 
-
-	
 	</>)
 }

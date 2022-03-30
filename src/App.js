@@ -22,8 +22,9 @@ function App() {
 				data.drinks.forEach((drink) => drinkList.push(drink));
 				drinkList[0].strDrink === 'GG' ? setDrinks([]) : setDrinks([ ...drinkList ]);
 				// console.log(drinks);
-				console.log(drink);
-				console.log(measure);
+				// console.log(drink);
+				// console.log(measure);
+				// console.log(data.drinks.map((drink) => drink)) Why doesn't this work?
 			});
 			// console.log(userInput);
 
